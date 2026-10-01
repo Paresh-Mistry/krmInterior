@@ -6,6 +6,9 @@ node_modules/
 # Next.js
 .next/
 out/
+.wrangler/
+.open-next/
+
 
 # Production
 build/
@@ -18,10 +21,6 @@ dist/
 .env.development.local
 .env.test.local
 .env.production.local
-/.open-next
-.open-next/
-/.wrangler
-.wrangler/
 
 # Vercel
 .vercel/
