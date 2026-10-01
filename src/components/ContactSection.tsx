@@ -19,7 +19,7 @@ export default function ContactSection() {
     const text = encodeURIComponent(
       `Hello KRM Interior,\nMy name is ${formData.name}.\nPhone: ${formData.phone}\nEmail: ${formData.email}\nService: ${formData.service}\nNotes: ${formData.message}`
     );
-    window.open(`https://wa.me/919920086695?text=${text}`, "_blank");
+    window.open(`https://wa.me/${process.env.MOBILE_NUMBER}?text=${text}`, "_blank");
   };
 
   return (
@@ -60,86 +60,6 @@ export default function ContactSection() {
                 </p>
               </div>
             </div>
-
-            {/* Studio Details Card */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-[#f5f2ea] border border-[#e4dcce] space-y-6">
-              <h3 className="font-serif text-xl font-medium text-[#171513]">
-                KRM Interior Studio
-              </h3>
-
-              <div className="space-y-4 text-xs sm:text-sm text-[#4d4538]">
-                {/* Location */}
-                <div className="flex items-start space-x-3.5">
-                  <div className="p-2 rounded-lg bg-[#ede7dc] text-[#8c795b] shrink-0 mt-0.5">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <strong className="block text-[#171513] font-medium font-mono text-[11px] uppercase tracking-wider mb-0.5">
-                      Studio Address
-                    </strong>
-                    <p className="leading-relaxed">
-                      Dr. B. A. Road, Parel, Mumbai, Maharashtra
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div className="flex items-start space-x-3.5">
-                  <div className="p-2 rounded-lg bg-[#ede7dc] text-[#8c795b] shrink-0 mt-0.5">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <strong className="block text-[#171513] font-medium font-mono text-[11px] uppercase tracking-wider mb-0.5">
-                      Direct Studio Line
-                    </strong>
-                    <a
-                      href="tel:9920086695"
-                      className="font-mono text-sm hover:text-[#9d8766] transition-colors font-medium text-[#171513]"
-                    >
-                      9920086695
-                    </a>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="flex items-start space-x-3.5">
-                  <div className="p-2 rounded-lg bg-[#ede7dc] text-[#8c795b] shrink-0 mt-0.5">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <strong className="block text-[#171513] font-medium font-mono text-[11px] uppercase tracking-wider mb-0.5">
-                      Email Inquiries
-                    </strong>
-                    <a
-                      href="mailto:interiordesigner@gmail.com"
-                      className="hover:text-[#9d8766] transition-colors break-all"
-                    >
-                      interiordesigner@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Quick Contact CTAs */}
-              <div className="pt-4 border-t border-[#ded5c2] grid grid-cols-2 gap-3">
-                <a
-                  href="tel:9920086695"
-                  className="flex items-center justify-center space-x-2 py-3 px-4 rounded-xl bg-[#faf9f6] text-[#171513] border border-[#ded5c2] hover:bg-[#ede7dc] text-xs uppercase tracking-wider font-medium transition-all text-center"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#9d8766]" />
-                  <span>Call Us</span>
-                </a>
-                <a
-                  href="https://wa.me/919920086695?text=Hello%20KRM%20Interior%2C%20I%20would%20like%20to%20discuss%20an%20interior%20project."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 py-3 px-4 rounded-xl bg-[#171513] text-[#faf9f6] hover:bg-[#38332b] text-xs uppercase tracking-wider font-medium transition-all text-center shadow-sm"
-                >
-                  <MessageCircle className="w-3.5 h-3.5 text-[#d6caa7]" />
-                  <span>WhatsApp</span>
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Interactive Consultation Form */}
@@ -147,7 +67,7 @@ export default function ContactSection() {
             <h3 className="font-serif text-2xl font-medium text-[#171513] mb-2">
               Start a Conversation
             </h3>
-            <p className="text-xs text-[#6e6557] mb-8">
+            <p className="text-sm text-[#6e6557] mb-8">
               Share details regarding your residence or commercial space. We will respond promptly.
             </p>
 
@@ -159,13 +79,13 @@ export default function ContactSection() {
                 <h4 className="font-serif text-xl font-medium text-[#171513]">
                   Inquiry Initiated
                 </h4>
-                <p className="text-xs text-[#524a3e] max-w-sm mx-auto leading-relaxed">
-                  Thank you for reaching out to KRM Interior. Your details have opened in WhatsApp. You may also call us directly at 9920086695.
+                <p className="text-sm text-[#524a3e] max-w-sm mx-auto leading-relaxed">
+                  Thank you for reaching out to KRM Interior. Your details have opened in WhatsApp.
                 </p>
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
-                  className="text-xs font-mono underline uppercase tracking-wider text-[#7a7266] hover:text-[#171513]"
+                  className="text-sm font-mono underline uppercase tracking-wider text-[#7a7266] hover:text-[#171513]"
                 >
                   Send another message
                 </button>
@@ -183,7 +103,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Rahul Sharma"
-                      className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-xs text-[#171513] focus:outline-none focus:border-[#9d8766]"
+                      className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-sm text-[#171513] focus:outline-none focus:border-[#9d8766]"
                     />
                   </div>
 
@@ -197,7 +117,7 @@ export default function ContactSection() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="e.g. 98200XXXXX"
-                      className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-xs text-[#171513] focus:outline-none focus:border-[#9d8766]"
+                      className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-sm text-[#171513] focus:outline-none focus:border-[#9d8766]"
                     />
                   </div>
                 </div>
@@ -212,7 +132,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. rahul@example.com"
-                      className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-xs text-[#171513] focus:outline-none focus:border-[#9d8766]"
+                      className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-sm text-[#171513] focus:outline-none focus:border-[#9d8766]"
                     />
                   </div>
 
@@ -223,7 +143,7 @@ export default function ContactSection() {
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-xs text-[#171513] focus:outline-none focus:border-[#9d8766]"
+                      className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-sm text-[#171513] focus:outline-none focus:border-[#9d8766]"
                     >
                       <option value="Residential Interiors">Residential Interiors</option>
                       <option value="Commercial Interiors">Commercial Interiors</option>
@@ -246,13 +166,13 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us about the property, location in Mumbai, carpet area, or current condition..."
-                    className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-xs text-[#171513] focus:outline-none focus:border-[#9d8766] resize-none"
+                    className="w-full px-4 py-3 bg-[#F7F4EE] border-b border-[#d9cfbe] text-sm text-[#171513] focus:outline-none focus:border-[#9d8766] resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center space-x-2 py-4 px-6 rounded-xl bg-[#171513] text-[#faf9f6] hover:bg-[#38332b] text-xs uppercase tracking-widest font-medium transition-all shadow-md"
+                  className="w-full flex items-center justify-center space-x-2 py-4 px-6 rounded-xl bg-[#171513] text-[#faf9f6] hover:bg-[#38332b] text-sm uppercase tracking-widest font-medium transition-all shadow-md"
                 >
                   <Send className="w-3.5 h-3.5 text-[#d6caa7]" />
                   <span>Start a Conversation</span>

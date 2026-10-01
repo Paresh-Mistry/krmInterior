@@ -146,7 +146,7 @@ export default function ServicesSection() {
               <span className="italic font-normal text-[#8c795b]">Tailored to the space.</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#5c5447] max-w-md leading-relaxed">
+          <p className="text-sm sm:text-sm text-[#5c5447] max-w-md leading-relaxed">
             From single-room transformations to complete turnkey interior solutions across Mumbai. Every project is executed with disciplined craftsmanship and transparent communication.
           </p>
         </div>
@@ -180,7 +180,7 @@ export default function ServicesSection() {
                       {service.tag}
                     </span>
 
-                    <span className="absolute top-3 right-3 font-mono text-xs px-2 py-0.5 rounded-full bg-black/40 text-white backdrop-blur-sm">
+                    <span className="absolute top-3 right-3 font-mono text-sm px-2 py-0.5 rounded-full bg-black/40 text-white backdrop-blur-sm">
                       0{idx + 1}
                     </span>
                   </div>
@@ -197,7 +197,7 @@ export default function ServicesSection() {
                         </h3>
                       </div>
 
-                      <p className="text-xs text-[#61584b] line-clamp-2 leading-relaxed">
+                      <p className="text-sm text-[#61584b] line-clamp-2 leading-relaxed">
                         {service.subtitle}
                       </p>
                     </div>
@@ -247,11 +247,11 @@ export default function ServicesSection() {
             {/* Details and Specs */}
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center space-x-3">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#9d8766] font-semibold">
+                <span className="text-sm font-mono uppercase tracking-[0.25em] text-[#9d8766] font-semibold">
                   Detailed Scope
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#9d8766]" />
-                <span className="text-xs font-mono text-[#7b7264]">{activeServiceData.tag}</span>
+                <span className="text-sm font-mono text-[#7b7264]">{activeServiceData.tag}</span>
               </div>
 
               <div>
@@ -266,7 +266,7 @@ export default function ServicesSection() {
               {/* Core Features */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {activeServiceData.features.map((feature) => (
-                  <div key={feature} className="flex items-center space-x-2.5 text-xs text-[#3b352b]">
+                  <div key={feature} className="flex items-center space-x-2.5 text-sm text-[#3b352b]">
                     <CheckCircle2 className="w-4 h-4 text-[#8c795b] shrink-0" />
                     <span>{feature}</span>
                   </div>
@@ -277,15 +277,15 @@ export default function ServicesSection() {
               <div className="pt-4 border-t border-[#ded5c2] flex flex-col sm:flex-row items-center gap-4">
                 <a
                   href={`tel:${process.env.MOBILE_NUMBER}`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 py-3.5 px-4 bg-green-600 text-white hover:bg-green-700 rounded-full text-xs uppercase tracking-widest font-medium transition-all"
+                  className="w-full sm:w-auto inline-flex gap-3 items-center justify-center space-x-2 py-3.5 px-4 bg-green-600 text-white hover:bg-green-700 rounded-full text-sm uppercase tracking-widest font-medium transition-all"
                 >
-                  <Phone size={18} />
+                  <Phone size={18} /> Call To KRM Interior
                 </a>
                 <a
                   href={`https://wa.me/${process.env.MOBILE_NUMBER}?text=Hello%20KRM%20Interior%2C%20I%20am%20interested%20in%20consulting%20about%20${encodeURIComponent(activeServiceData.title)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 py-3.5 px-6 bg-[#1e1c18] text-[#faf9f6] hover:bg-[#38332b] rounded-full text-xs uppercase tracking-widest font-medium transition-all shadow-md"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 py-3.5 px-6 bg-[#1e1c18] text-[#faf9f6] hover:bg-[#38332b] rounded-full text-sm uppercase tracking-widest font-medium transition-all shadow-md"
                 >
                   <span>Inquire for {activeServiceData.title}</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-[#d6caa7]" />

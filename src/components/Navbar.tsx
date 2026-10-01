@@ -99,7 +99,7 @@ export default function Navbar() {
               className="p-2 rounded-full bg-white/40 text-[#171513] hover:bg-white/70 transition-colors border border-white/50"
               aria-label="Call KRM Interior"
             >
-              <Phone className="w-3.5 h-3.5 text-[#9d8766]" />
+              <Phone className="w-5.5 h-5.5 text-[#9d8766]" />
             </a>
 
             <button
@@ -108,7 +108,7 @@ export default function Navbar() {
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>

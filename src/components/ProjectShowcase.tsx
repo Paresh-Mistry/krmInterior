@@ -108,7 +108,7 @@ export default function ProjectShowcase() {
           </div>
 
           <div className="max-w-md space-y-2">
-            <p className="text-xs sm:text-sm text-[#5c5447] leading-relaxed">
+            <p className="text-sm sm:text-sm text-[#5c5447] leading-relaxed">
               Architectural studies and design layouts developed by KRM Interior. Ready-to-adapt frameworks representing our spatial principles across Mumbai residences and workspaces.
             </p>
             <div className="flex items-center space-x-2 text-[11px] font-mono text-[#8a8070]">
@@ -124,7 +124,7 @@ export default function ProjectShowcase() {
             <button
               key={cat.value}
               onClick={() => setFilter(cat.value)}
-              className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all whitespace-nowrap ${
+              className={`px-5 py-2.5 rounded-full text-sm font-mono uppercase tracking-wider transition-all whitespace-nowrap ${
                 filter === cat.value
                   ? "bg-[#171513] text-[#faf9f6] font-semibold shadow-md"
                   : "bg-[#f2ece0] text-[#6b6253] hover:bg-[#e6decf]"
@@ -188,7 +188,7 @@ export default function ProjectShowcase() {
                   <h3 className="font-serif text-2xl font-medium text-[#171513] mb-2 group-hover:text-[#8c795b] transition-colors leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-[#5c5447] leading-relaxed line-clamp-3">
+                  <p className="text-sm text-[#5c5447] leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
                 </div>
